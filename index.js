@@ -1,8 +1,11 @@
 var express = require('express');
-var port = process.env.PORT || 3000;
 var app = express();
+app.use(express.static(__dirname));
+
 app.get('/', function (req, res) {
- res.send('index.html');
-app.listen(port, function () {
- console.log(`Example app listening on port !`);
+  res.sendFile(__dirname + "/" + "index.html");
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
