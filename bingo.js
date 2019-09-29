@@ -49,4 +49,13 @@ const themes = [
         });
     }
 
+    function newGame() {
+        bingoWrapper.innerHTML = '';
+        startGame();
+    }
+
+
+btn = document.getElementById('btn');
+btn.addEventListener("click", newGame);
+
 startGame();
