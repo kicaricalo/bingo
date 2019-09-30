@@ -1,6 +1,14 @@
 body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 1024px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right bottom, #1B5664, #102A6F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom, #1B5664, #102A6F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #wrapper {
@@ -17,10 +25,11 @@ body {
 }
 
 .bingo-item {
+    background-color: azure;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1.2rem 1.2rem;
+    padding: 0.8rem 1rem;
     
 }
