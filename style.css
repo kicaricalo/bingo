@@ -17,5 +17,6 @@ body {
 }
 
 .bingo-item {
-    border: 1px solid grey;
+    text-align: center;
+    padding: 1.2rem 1.2rem;
 }

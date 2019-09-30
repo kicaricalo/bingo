@@ -25,7 +25,11 @@ const themes = [
     'Трамп',
     'Путин',
     'Ангела Меркель',
-    'Путин'
+    'Путин',
+    'Власти плохие',
+    'У нас всё плохо',
+    "У них всё ещё хуже",
+    "Фокусники"
     ];
 
     const bingoWrapper = document.getElementById('wrapper');
@@ -43,7 +47,7 @@ const themes = [
 
         newBingoCard.forEach( function(item) {
             const bingoItem = document.createElement('div');
-            bingoItem.classList.add('bingo-item');
+            bingoItem.classList.add('bingo-item', "border");
             bingoItem.innerHTML = item;
             bingoWrapper.append(bingoItem);
         });
