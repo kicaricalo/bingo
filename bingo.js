@@ -29,44 +29,45 @@ const themes = [
     'У нас всё плохо',
     "У них всё ещё хуже",
     "Фокусники"
-    ];
+];
 
-    const bingoWrapper = document.getElementById('wrapper');
+const bingoWrapper = document.getElementById('wrapper');
 
-    function startGame() {
-        let newBingoCard = [];
-        let randomThemes = themes.slice(0);
+function startGame() {
+    let newBingoCard = [];
+    let randomThemes = themes.slice(0);
 
-        for (i=0; i < 16; i++) {
-            const randomIndex = Math.floor(Math.random() * (randomThemes.length - 1));
-            const bingoItem = randomThemes[randomIndex];
-            newBingoCard.push(bingoItem);
-            randomThemes.splice(randomIndex, 1);
-        }
+    for (i = 0; i < 16; i++) {
+        const randomIndex = Math.floor(Math.random() * (randomThemes.length - 1));
+        const bingoItem = randomThemes[randomIndex];
+        newBingoCard.push(bingoItem);
+        randomThemes.splice(randomIndex, 1);
+    }
 
-        newBingoCard.forEach( function(item) {
-            const bingoItem = document.createElement('div');
-            bingoItem.classList.add('bingo-item');
-            bingoItem.innerHTML = item;
-            bingoWrapper.append(bingoItem);
+    newBingoCard.forEach(function (item) {
+        const bingoItem = document.createElement('div');
+        bingoItem.classList.add('bingo-item');
+        bingoItem.innerHTML = item;
+        bingoWrapper.append(bingoItem);
+    });
+
+    const bingoItems = document.querySelectorAll('.bingo-item');
+
+    for (const bingoItem of bingoItems) {
+        bingoItem.addEventListener('click', function (event) {
+            event.target.classList.toggle('checked');
         });
     }
 
-    function newGame() {
-        bingoWrapper.innerHTML = '';
-        startGame();
-    }
+}
+
+function newGame() {
+    bingoWrapper.innerHTML = '';
+    startGame();
+}
 
 
 btn = document.getElementById('btn');
 btn.addEventListener("click", newGame);
 
 startGame();
-
-const bingoItems = document.querySelectorAll('.bingo-item');
-
-for (const bingoItem of bingoItems) {
-  bingoItem.addEventListener('click', function(event) {
-    event.target.classList.toggle('checked');
-  });
-}
