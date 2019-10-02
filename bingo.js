@@ -46,7 +46,7 @@ const themes = [
 
         newBingoCard.forEach( function(item) {
             const bingoItem = document.createElement('div');
-            bingoItem.classList.add('bingo-item', "border");
+            bingoItem.classList.add('bingo-item');
             bingoItem.innerHTML = item;
             bingoWrapper.append(bingoItem);
         });
@@ -62,3 +62,11 @@ btn = document.getElementById('btn');
 btn.addEventListener("click", newGame);
 
 startGame();
+
+const bingoItems = document.querySelectorAll('.bingo-item');
+
+for (const bingoItem of bingoItems) {
+  bingoItem.addEventListener('click', function(event) {
+    event.target.classList.toggle('checked');
+  });
+}

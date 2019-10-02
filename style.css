@@ -34,3 +34,7 @@ body {
     text-align: center;
     /* padding: 0.8rem 1rem; */
 }
+
+.checked {
+    background-color: greenyellow;
+}
